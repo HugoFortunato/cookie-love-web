@@ -1,6 +1,6 @@
 'use client';
 
-import { AlertTriangle, Loader2 } from 'lucide-react';
+import { AlertTriangle, Heart, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 
@@ -36,12 +36,16 @@ export function SignInForm() {
           className="hidden md:block h-auto w-45"
         />
 
-        <h1 className="text-6xl hidden md:block">Cookie Lucky</h1>
+        <div className="text-6xl hidden md:flex md:items-center md:justify-center">
+          Cookie
+          <span className="text-red-500">love</span>
+          <Heart className="size-5 relative bottom-6 right-3" color="red" />
+        </div>
 
-        <span className="hidden md:block mt-3">
+        <strong className="hidden md:block mt-3">
           This app give you a chance to get best cookie phrase love for your
           day.
-        </span>
+        </strong>
       </div>
 
       <div className="space-y-4 p-6 md:p-0 md:w-2/6 md:mt-28">
