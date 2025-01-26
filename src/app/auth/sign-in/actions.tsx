@@ -31,7 +31,7 @@ export async function signInWithEmailAndPassword(data: FormData) {
     });
 
     (await cookies()).set('token', token, {
-      path: '/',
+      path: '/your-phrase',
       maxAge: 60 * 60 * 24 * 7,
     });
   } catch (err) {

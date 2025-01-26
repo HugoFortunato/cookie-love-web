@@ -23,7 +23,7 @@ export function SignInForm() {
     signInWithEmailAndPassword,
     undefined,
     () => {
-      router.push('/');
+      router.push('/your-phrase');
     }
   );
 
