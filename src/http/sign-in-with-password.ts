@@ -22,5 +22,9 @@ export async function signInWithPassword({
     })
     .json<SignInWithPasswordResponse>();
 
+  if (!result.token) {
+    throw new Error('Invalid credentials');
+  }
+
   return result;
 }
