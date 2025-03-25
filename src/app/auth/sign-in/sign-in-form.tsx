@@ -43,14 +43,15 @@ export function SignInForm() {
         </div>
 
         <strong className="hidden md:block mt-3">
-          This app give you a chance to get best cookie phrase love for your
-          day.
+          This app gives you a chance to get the best cookie phrase love for
+          your day.
         </strong>
       </div>
 
       <div className="space-y-4 p-6 md:p-0 md:w-2/6 md:mt-28">
         <form onSubmit={handleSubmit} className="space-y-10">
-          {success === false && message && (
+          {/* Exibe o alerta apenas se a autenticação falhar e a requisição terminar */}
+          {success === false && message && !isPending && (
             <Alert variant="destructive">
               <AlertTriangle className="size-4" />
               <AlertTitle>Sign in failed!</AlertTitle>
