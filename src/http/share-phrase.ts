@@ -25,7 +25,12 @@ export async function shareYourPhrase({
       body: JSON.stringify({ recipientEmail, content }),
     });
 
-    return res;
+    if (!res.ok) {
+      throw new Error(res.statusText);
+    }
+
+    const data = await res.json();
+    return data;
   } catch (error) {
     throw error;
   }
