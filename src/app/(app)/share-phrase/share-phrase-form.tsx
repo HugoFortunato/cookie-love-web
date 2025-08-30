@@ -1,6 +1,7 @@
 'use client';
 
 import { AlertTriangle, Loader2 } from 'lucide-react';
+import { toast } from 'sonner';
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
@@ -11,8 +12,13 @@ import { useFormState } from '@/hooks/use-form-state';
 import { sharePhrase } from './actions';
 
 export function SharePhraseForm() {
-  const [{ errors, message, success }, handleSubmit, isPending] =
-    useFormState(sharePhrase);
+  const [{ errors, message, success }, handleSubmit, isPending] = useFormState(
+    sharePhrase,
+    undefined,
+    () => {
+      toast.success('Phrase shared successfully!');
+    }
+  );
 
   return (
     <div className="w-full flex items-center justify-center h-svh">
@@ -28,12 +34,7 @@ export function SharePhraseForm() {
 
           <div className="space-y-1">
             <Label htmlFor="recipientEmail">E-mail</Label>
-            <Input
-              name="recipientEmail"
-              type="email"
-              id="recipientEmail"
-              //   defaultValue={searchParams.get('recipientEmail') ?? ''}
-            />
+            <Input name="recipientEmail" type="email" id="recipientEmail" />
 
             {errors?.recipientEmail && (
               <p className="text-xs font-medium text-red-500 dark:text-red-400">

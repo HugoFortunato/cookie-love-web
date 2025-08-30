@@ -14,7 +14,6 @@ const sharePhraseSchema = z.object({
 });
 
 export async function sharePhrase(data: FormData) {
-  console.log('chamado');
   const result = sharePhraseSchema.safeParse(Object.fromEntries(data));
 
   if (!result.success) {

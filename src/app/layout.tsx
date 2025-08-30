@@ -1,6 +1,6 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
-import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
           defaultTheme="light"
           disableTransitionOnChange
         >
-          <ToastContainer />
+          <Toaster position="top-right" />
           <Providers>{children}</Providers>
         </ThemeProvider>
       </body>
